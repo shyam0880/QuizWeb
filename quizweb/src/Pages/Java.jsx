@@ -1,42 +1,42 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function Java() {
+export default function Java(props) {
     const questions = [
         {
-            questionText: 'What is the capital of France?',
+            questionText: 'Which of the following option leads to the portability and security of Java?',
             answerOptions: [
-                { answerText: 'New York', isCorrect: false },
-                { answerText: 'London', isCorrect: false },
-                { answerText: 'Paris', isCorrect: true },
-                { answerText: 'Dublin', isCorrect: false },
+                { answerText: 'Bytecode is executed by JVM', isCorrect: true },
+                { answerText: 'The applet makes the Java code secure and portable', isCorrect: false },
+                { answerText: 'Use of exception handling', isCorrect: false },
+                { answerText: 'Dynamic binding between objects', isCorrect: false },
             ],
         },
         {
-            questionText: 'Who is CEO of Tesla?',
+            questionText: 'Which of the following is not a Java features?',
             answerOptions: [
-                { answerText: 'Jeff Bezos', isCorrect: false },
-                { answerText: 'Elon Musk', isCorrect: true },
-                { answerText: 'Bill Gates', isCorrect: false },
-                { answerText: 'Tony Stark', isCorrect: false },
+                { answerText: 'Dynamic', isCorrect: false },
+                { answerText: 'Architecture Neutral', isCorrect: false },
+                { answerText: 'Use of pointers', isCorrect: true },
+                { answerText: 'Object-oriented', isCorrect: false },
             ],
         },
         {
-            questionText: 'The iPhone was created by which company?',
+            questionText: ' _____ is used to find and fix bugs in the Java programs?',
             answerOptions: [
-                { answerText: 'Apple', isCorrect: true },
-                { answerText: 'Intel', isCorrect: false },
-                { answerText: 'Amazon', isCorrect: false },
-                { answerText: 'Microsoft', isCorrect: false },
+                { answerText: 'JVM', isCorrect: false },
+                { answerText: 'JRE', isCorrect: false },
+                { answerText: 'JDK', isCorrect: false },
+                { answerText: 'JDB', isCorrect: true },
             ],
         },
         {
-            questionText: 'How many Harry Potter books are there?',
+            questionText: 'An interface with no fields or methods is known as a ______.',
             answerOptions: [
-                { answerText: '1', isCorrect: false },
-                { answerText: '4', isCorrect: false },
-                { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
+                { answerText: 'Runnable Interface', isCorrect: false },
+                { answerText: 'Marker Interface', isCorrect: true },
+                { answerText: 'Abstract Interface', isCorrect: false },
+                { answerText: 'CharSequence Interface', isCorrect: false },
             ],
         },
     ];
@@ -61,19 +61,27 @@ const handleAnswerOptionClick = (isCorrect) => {
 
   return(
     <div>
-      <div className="question-sec">
-        <div className="question-count">
-          <span>Question: {currentQuestion+1}</span>/{questions.length}
-        </div>
-        <div className="question-text">
-          {questions[currentQuestion].questionText}
-        </div>
-      </div>
-      <div className="answer-sec">
-      {questions[currentQuestion].answerOptions.map((answerOption) => (
+        {showScore ?(
+            <div className='score-section'>
+            You scored {score} out of {questions.length}
+            </div>
+        ):(
+            <>
+            <div className="question-sec">
+                <div className="question-count">
+                    <span>Question: {currentQuestion+1}</span>/{questions.length}
+                </div>
+                <div className="question-text">
+                    {questions[currentQuestion].questionText}
+                </div>
+            </div>
+            <div className="answer-sec">
+                {questions[currentQuestion].answerOptions.map((answerOption) => (
                             <button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-                        ))}
-      </div>
+                ))}
+            </div>
+            </>
+        )}
     </div>
   );
 }
