@@ -3,14 +3,14 @@ import Home from './Pages/Home';
 import Java from './Pages/Java';
 import Sql from './Pages/Sql';
 import Python from './Pages/Python';
-import Option from './Component/Option';
+import { NavLink } from 'react-router-dom';
 
 
 
 function App() {
   return (
     <div>
-    <Option />
+    <button><NavLink to="/">&lt;</NavLink></button>
     <Routes>
     <Route path='/' element={<Home/>} />
     <Route path='/java' element={<Java/>} />
