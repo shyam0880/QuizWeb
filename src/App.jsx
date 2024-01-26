@@ -9,14 +9,20 @@ import { NavLink } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-    <button><NavLink to="/">&lt;</NavLink></button>
-    <Routes>
-    <Route path='/' element={<Home/>} />
-    <Route path='/java' element={<Java/>} />
-    <Route path='/python' element={<Python/>} />
-    <Route path='/sql' element={<Sql/>} />
-    </Routes>
+    <div className='page'>
+      <div className='box'>
+        <div className='butt'>
+          <button className='back'><NavLink to="/" className={"navtext"}>&laquo;</NavLink></button>
+        </div>
+        <div className='ques'>
+          <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/java' element={<Java/>} />
+          <Route path='/python' element={<Python/>} />
+          <Route path='/sql' element={<Sql/>} />
+          </Routes>
+        </div>
+      </div>
     </div>
   )
   

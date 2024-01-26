@@ -1,14 +1,15 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import '../index.css';
 
 export default function Home() {
   return (
-    <div>
+    <div className='topic'>
     <label>Questions :</label>
-    <ul>
-        <li><NavLink to="/java">Java</NavLink></li>
-        <li><NavLink to="/python">Python</NavLink></li>
-        <li><NavLink to="/sql">SQL</NavLink></li>
+    <ul className='list'>
+        <li><NavLink to="/java" className={"hell"}>Java</NavLink></li>
+        <li><NavLink to="/python" className={"hell"}>Python</NavLink></li>
+        <li><NavLink to="/sql" className={"hell"}>SQL</NavLink></li>
     </ul>
     </div>
   )
