@@ -5,7 +5,7 @@ import '../index.css';
 export default function Home() {
   return (
     <div className='topic'>
-    <label>Questions :</label>
+    <label>Subject :</label>
     <ul className='list'>
         <li><NavLink to="/java" className={"hell"}>Java</NavLink></li>
         <li><NavLink to="/python" className={"hell"}>Python</NavLink></li>

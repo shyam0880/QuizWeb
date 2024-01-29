@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 
-export default function Java(props) {
+export default function Java() {
     const questions = [
         {
             questionText: 'Which of the following option leads to the portability and security of Java?',
